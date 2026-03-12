@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio DIV e background</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset básico para remover margens indesejadas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh; /* 100vh ocupa 100% da altura da janela visível */
+            
+            /* Adicionamos um fundo escurecido (gradient) antes da imagem para melhorar a leitura do texto */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('paisagem.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* Flexbox: O segredo para centralizar tudo perfeitamente */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza no eixo vertical */
+            align-items: center;     /* Centraliza no eixo horizontal */
+            text-align: center;
+            color: white;
+        }
+
+        .conteudo h1 {
+            font-size: 4rem; /* Tamanho grande e chamativo */
+            font-weight: 600;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+            animation: surgir 1.2s ease-out; /* Animação de entrada */
+        }
+
+        .conteudo p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 10px;
+            color: #e0e0e0;
+            text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: surgir 1.5s ease-out;
+        }
+
+        /* Definindo a animação que faz o texto subir e aparecer suavemente */
+        @keyframes surgir {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="conteudo">
+            <h1>Olá, mundo!</h1>
+            <p>A beleza está nos detalhes.</p>
+        </div>
+    </div>
+</body>
+</html>
